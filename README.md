@@ -53,7 +53,7 @@ pelops dux4r --help
 ## Inputs
 
 The input to Pelops is a short-read whole-genome sequencing BAM or CRAM file from a tumour sample,
-aligned to the GRCh38 reference genome.
+aligned to the GRCh38 reference genome. The BAM/CRAM file needs to be indexed. 
 Pelops was tested on alignments by DRAGEN (version 4.0.3), bwa (version 0.7.17), and Isaac (version SAAC01325.18.01.29).
 
 ### Systematic noise BED file
