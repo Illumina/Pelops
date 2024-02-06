@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>288</y>
+      <w>128</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>PresenterFactory</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>48</x>
+      <y>184</y>
+      <w>208</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>LogNotificationServiceFactory
+
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>104</y>
+      <w>200</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>/NotificationServiceFactory/
+--
+--
++build(): NotificationService
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>184</y>
+      <w>208</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>SimpleNotificationServiceFactory
+
+group=group-0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>144</y>
+      <w>144</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=group-0</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;30.0;10.0;30.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>144</y>
+      <w>152</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=group-0</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;170.0;30.0;170.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>392</y>
+      <w>256</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>/SegmentRepositoryFactory/
+--
+--
++build_counter(
+  features: FrozenSet[SegmentRepoFeature],
+  total_number_of_reads: Optional[int],
+): SegmentCounter
++build(
+  features: FrozenSet[SegmentRepoFeature],
+  total_number_of_reads: Optional[int],
+): PlacedSegmentRepository</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>752</x>
+      <y>568</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>PysamSegmentRepositoryFactory
+--
++ notification_service_factory
+- bam_file: Path
+- number_of_threads: int
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>528</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>520</y>
+      <w>200</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>/RegionRepositoryFactory/
+--
+--
++build(
+  repo_type: RegionRepoType
+): RegionRepository
+
+group=group-5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>624</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>FileRegionRepositoryFactory
+--
+- bed_file
+group=group-5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>584</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=group-5</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>384</y>
+      <w>296</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>CandidateRegionCallerFactory
+--
+
+--
++build(
+  caller_features: FrozenSet[CallerFeature]
+  total_number_of_reads: Optional[int] = None
+): CandidateRegionCaller
+
+group=group-5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>400</y>
+      <w>56</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>400</y>
+      <w>56</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+group=group-5</panel_attributes>
+    <additional_attributes>50.0;160.0;10.0;160.0;10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1040</x>
+      <y>376</y>
+      <w>304</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>ReadCallerFactory
+--
+
+--
++build(
+  minimum_mapping_quality: int
+  features: FrozenSet[CallerFeature]
+  total_number_of_reads: Optional[int]
+): SpanningReadsCaller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>992</x>
+      <y>392</y>
+      <w>64</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>440</x>
+      <y>264</y>
+      <w>248</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>RegionPairCallerFactory
+--
+notification_service_factory
+--
++build(
+  caller_type: CallerType,
+  caller_features: FrozenSet[CallerFeature],
+  total_number_of_reads: Optional[int],
+): CompoundRegionPairCaller
+group=group-5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>288</y>
+      <w>64</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+group=group-5</panel_attributes>
+    <additional_attributes>30.0;130.0;10.0;130.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>280</y>
+      <w>96</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+group=group-5</panel_attributes>
+    <additional_attributes>90.0;320.0;10.0;320.0;10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>192</y>
+      <w>288</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>RearrangementCallerFactory
+--
+
+--
++build(
+  caller_type: CallerType
+  features: FrozenSet[CallerFeature]
+  minimum_mapping_quality: Optional[int] = None
+  srpb_threshold: Optional[float] = None
+  total_number_of_reads: Optional[int] = None
+): RearrangementCaller</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>712</x>
+      <y>208</y>
+      <w>48</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>40.0;240.0;10.0;240.0;10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>200</y>
+      <w>176</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1016</x>
+      <y>200</y>
+      <w>192</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>220.0;220.0;220.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

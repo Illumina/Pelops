@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ilmn-pelops"
+description = "Call Structural variants affecting DUX4r"
+keywords = ["dux4r_caller", "ilmn", "pelops"]
+license = { text = "BSD license" }
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
+dynamic = ["readme", "version"]
+requires-python = ">=3.7"
+dependencies = ["pysam", "importlib-metadata", "typing-extensions"]
+authors = [{ name = "Stefano Berri", email = "sberri@illumina.com" }]
+
+[project.scripts]
+pelops = "ilmn.pelops.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["ilmn.*"]
+namespaces = true
+
+[tool.setuptools.dynamic]
+readme = { file = ["README.rst", "HISTORY.rst"] }
+version = { file = ["Versionfile"] }
+
+[tool.black]
+exclude = '''
+    /( .history | .tox | .git | build | .mypy_cache)/
+    '''
+
+[tool.isort]
+profile = "black"
