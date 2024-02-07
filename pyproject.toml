@@ -4,23 +4,42 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ilmn-pelops"
-description = "Call Structural variants affecting DUX4r"
-keywords = ["dux4r_caller", "ilmn", "pelops"]
-license = { text = "BSD license" }
+description = "Dedicated caller for DUX4 rearrangements from whole genome sequencing data."
+keywords = ["DUX4", "acute lymphoblastic leukaemia", "whole-genome sequencing", "IGH::DUX4 rearrangements"]
+license = { text = "PolyForm Strict License 1.0.0" }
 classifiers = [
-    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: BSD License",
+    "Intended Audience :: Science/Research",
+    "Environment :: Console",
     "Natural Language :: English",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
 ]
+
 dynamic = ["readme", "version"]
 requires-python = ">=3.7"
 dependencies = ["pysam", "importlib-metadata", "typing-extensions"]
-authors = [{ name = "Stefano Berri", email = "sberri@illumina.com" }]
+authors = [
+  { name = "Stefano Berri", email = "sberri@illumina.com" },
+  { name = "Pascal Grobecker", email = "pgrobecker@illumina.com" },
+  { name = "Kai Jie Chow", email = "kchow@illumina.com" },
+  { name = "Martina Mijuskovic", email = "mmijuskovic@illumina.com" },
+]
+maintainers = [
+  { name = "Stefano Berri", email = "sberri@illumina.com" },
+  { name = "Kai Jie Chow", email = "kchow@illumina.com" },
+]
+
+[project.urls]
+Repository = "https://github.com/Illumina/Pelops"
 
 [project.scripts]
 pelops = "ilmn.pelops.cli:main"
@@ -30,7 +49,7 @@ include = ["ilmn.*"]
 namespaces = true
 
 [tool.setuptools.dynamic]
-readme = { file = ["README.rst", "HISTORY.rst"] }
+readme = { file = ["README.md"], content-type = "text/markdown" }
 version = { file = ["Versionfile"] }
 
 [tool.black]
